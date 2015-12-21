@@ -31,10 +31,10 @@ def create
   redirect_to orders_path
 end
 
-def select
+def grab
   @group = Group.find(params[:id])
-  @group.orders.create(orders_params)
-  
+  Group.orders.create(orders_params)
+
   redirect_to orders_path
 end
 
