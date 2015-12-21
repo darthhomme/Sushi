@@ -13,8 +13,6 @@ class ServersController < ApplicationController
     redirect_to orders_path
   end
 
-  def log_in
-  end
   def show
     @server = Server.find(params[:id])
     redirect_to orders_path

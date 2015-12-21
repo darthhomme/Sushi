@@ -15,3 +15,10 @@
 </li>
 <% end %>
 </ul>
+<ul>
+  <% @orders.each do |order| %>
+    <li>
+      #<%= order.order_id %> - <%= order.description %>, $<%= order.price %>, $<%= order.tax %>, $<%= order.total %> <%= button_to "Remove", order_path(order), method: :delete%>
+    </li>
+  <% end %>
+</ul>

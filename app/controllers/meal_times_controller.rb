@@ -1,7 +1,7 @@
 class MealTimesController < ApplicationController
   def index
-    @meal_time = MealTime.new
     @meal_times = MealTime.all
+    @meal_time = MealTime.new
   end
 
   def create

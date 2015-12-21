@@ -1,16 +1,16 @@
 <h3>Bon Apetite!</h3>
 
 <%= form_for @meal_time do |f| %>
-  <%= f.collection_select(:candy_id, Candy.all, :id, :name) %>
-  <%= f.collection_select(:kiddo_id, Kiddo.all, :id, :name) %>
+  <%= f.collection_select(:order_id, Order.all, :id, :name) %>
+  <%= f.collection_select(:group_id, Group.all, :id, :name) %>
   <%= f.submit %>
 <% end %>
 
 <ul>
   <% @meal_times.each do |meal_time| %>
     <li>
-      <%= meal_time.kiddo.name %> wants
-      <%= meal_time.candy.name %>
+      <%= meal_time.group.name %> wants
+      <%= meal_time.order.name %>
     </li>
   <% end %>
 </ul>

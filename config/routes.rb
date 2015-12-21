@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   resources :servers
   resources :orders
   resources :groups
+  resources :meal_times
 
   post '/sessions' => 'sessions#create'
   delete '/sessions' => 'sessions#destroy'
+
 
   resources :servers
   get '/log_in' => 'servers#log_in'

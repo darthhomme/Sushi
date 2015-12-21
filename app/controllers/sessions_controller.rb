@@ -1,11 +1,7 @@
 class SessionsController < ApplicationController
 
-def index
-  @server = Server.find_by_server_name
-end
-
     def create
-      server = Server.find_by_server_name(params[:server_name])
+      server = Server.find_by(:name => params[:server_name])
       if server && server.authenticate(params[:password])
         session[:server_id] = server.id
         redirect_to orders_path
