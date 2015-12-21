@@ -1,3 +1,5 @@
+<h3>Welcome, Server</h3>
+
 <ul>
 <%= form_for @order do |sushi| %>
 <li>
@@ -15,7 +17,7 @@
 </li>
 <% end %>
 </ul>
-<ul>
+<ul class='order'>
   <% @orders.each do |order| %>
     <li>
       #<%= order.order_id %> - <%= order.description %>, $<%= order.price %>, $<%= order.tax %>, $<%= order.total %> <%= button_to "Remove", order_path(order), method: :delete%>
