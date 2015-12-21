@@ -1,0 +1,17 @@
+<ul>
+<%= form_for @order do |sushi| %>
+<li>
+  <%= sushi.label :order_id %>
+  <%= sushi.text_field :order_id %>
+  <%= sushi.label :description %>
+  <%= sushi.text_field :description %>
+  <%= sushi.label :price %>
+  <%= sushi.text_field :price %>
+  <%= sushi.label :tax %>
+  <%= sushi.text_field :tax %>
+  <%= sushi.label :total %>
+  <%= sushi.text_field :total %>
+  <%= sushi.submit %>
+</li>
+<% end %>
+</ul>

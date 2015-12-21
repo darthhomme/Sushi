@@ -1,6 +1,7 @@
-<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag    'servers', media: 'all', 'data-turbolinks-track' => true %>
 
-
-<h3>Hello, it's me</h3>
-<img url="https://cdn.fbsbx.com/hphotos-xpt1/v/t59.2708-21/11408809_10155756381200089_1709635629_n.gif?oh=cd7cdb261be243162b7834b9636529f6&oe=567A59B1">
+<%= form_tag sessions_path do %>
+  <%= text_field_tag :server_name %>
+  <%= password_field_tag :password %>
+  <%= submit_tag "LogIn" %>
+<% end %>
