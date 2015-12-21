@@ -6,7 +6,7 @@ class MealTime < ActiveRecord::Base
   def checkout
     self.balance = 0
     self.orders.each do |order|
-      self.balance += order.food.price
+      self.balance += order.price
     end
     self.balance
   end

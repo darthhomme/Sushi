@@ -24,3 +24,12 @@
     </li>
   <% end %>
 </ul>
+
+<ul>
+<% @groups.each do |group| %>
+  <li>
+    <%= form_for @group do %>
+    <%= group.group_id %>
+  </li>
+<% end %>
+</ul>

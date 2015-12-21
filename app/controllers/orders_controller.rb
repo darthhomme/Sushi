@@ -30,6 +30,14 @@ def create
   Order.create(order_params)
   redirect_to orders_path
 end
+
+def select
+  @group = Group.find(params[:id])
+  @group.orders.create(orders_params)
+  
+  redirect_to orders_path
+end
+
 def show
   @order = Order.find(params[:id])
   redirect_to orders_path
