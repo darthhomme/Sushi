@@ -21,6 +21,7 @@ class OrdersController < ApplicationController
 def index
   @orders = Order.all
   @order = Order.new
+  @groups = Group.all
 end
 def new
   @order = Order.new
@@ -30,19 +31,11 @@ def create
   Order.create(order_params)
   redirect_to orders_path
 end
-
-def grab
-  @group = Group.find(params[:id])
-  Group.orders.create(orders_params)
-
-  redirect_to orders_path
-end
-
 def show
   @order = Order.find(params[:id])
   redirect_to orders_path
 end
-#           DELETE /candies/:id(.:format)      candies#destroy
+#         DELETE /candies/:id(.:format)      candies#destroy
 def destroy
   Order.delete(params[:id])
   redirect_to orders_path

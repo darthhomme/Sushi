@@ -17,19 +17,23 @@
 </li>
 <% end %>
 </ul>
-<ul class='order'>
+<ul>
   <% @orders.each do |order| %>
-    <li>
-      #<%= order.order_id %> - <%= order.description %>, $<%= order.price %>, $<%= order.tax %>, $<%= order.total %> <%= button_to "Remove", order_path(order), method: :delete%>
-    </li>
+    <li>#<%= order.order_id %></li>
+    <li><%= order.description %></li>
+    <li>$<%= order.price %></li>
+    <li>$<%= order.tax %></li>
+    <li>$<%= order.total %></li>
+    <li><%= button_to "Remove", order_path(order), method: :delete%></li>
   <% end %>
 </ul>
+<ul class='group'>
+  <% totalPrice = 0 %>
+  <% @orders.each do |fish| %>
+    <% totalPrice += fish.price.to_i %>
+    <% end %>
+    <li>Total Check:<%=(totalPrice) %></li>
 
-<ul>
-<% @groups.each do |group| %>
-  <li>
-    <%= form_for @group do %>
-    <%= group.group_id %>
-  </li>
-<% end %>
-</ul>
+    <li>Tip:<%=(totalPrice * 0.15) %></li>
+    <li>Tip:<%=(totalPrice * 0.2) %></li>
+    <li>Tip:<%=(totalPrice * 0.25) %></li>

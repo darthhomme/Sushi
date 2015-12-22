@@ -13,4 +13,6 @@
  *= require_self
  *= require servers
  *= require orders
+ *= require normalize
+ *= require skeleton
  */

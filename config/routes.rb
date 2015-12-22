@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :orders
   resources :groups
   resources :meal_times
+  resources :order_id
+  resources :group_id
 
   post '/sessions' => 'sessions#create'
   delete '/sessions' => 'sessions#destroy'
