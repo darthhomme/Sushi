@@ -8,7 +8,7 @@ class GroupsController < ApplicationController
     group = Group.create(group_params)
     redirect_to groups_path
   end
-end
+
 
 
 def new
