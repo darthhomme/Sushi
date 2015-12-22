@@ -35,8 +35,10 @@ group :production do
 end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-  gem 'pry-byebug'
+  gem 'web-console', '~> 2.0'
+  gem 'pry-rails'
+  gem 'awesome_print'
+  gem 'rspec-rails'
 end
 
 group :development do
