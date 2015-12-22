@@ -1,23 +1,5 @@
 class OrdersController < ApplicationController
-#  root GET    /                           servers#index
-#servers GET    /servers(.:format)          servers#index
-#      POST   /servers(.:format)          servers#create
-#new_server GET    /servers/new(.:format)      servers#new
-#edit_server GET    /servers/:id/edit(.:format) servers#edit
-#server GET    /servers/:id(.:format)      servers#show
-#      PATCH  /servers/:id(.:format)      servers#update
-#      PUT    /servers/:id(.:format)      servers#update
-#      DELETE /servers/:id(.:format)      servers#destroy
-#orders GET    /orders(.:format)           orders#index
-#      POST   /orders(.:format)           orders#create
-#new_order GET    /orders/new(.:format)       orders#new
-#edit_order GET    /orders/:id/edit(.:format)  orders#edit
-#order GET    /orders/:id(.:format)       orders#show
-#      PATCH  /orders/:id(.:format)       orders#update
-#      PUT    /orders/:id(.:format)       orders#update
-#      DELETE /orders/:id(.:format)       orders#destroy
 
-#   candies GET    /candies(.:format)          candies#index
 def index
   @orders = Order.all
   @order = Order.new
