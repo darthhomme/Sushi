@@ -1,16 +1,28 @@
-<!DOCTYPE html>
-<html>
+
+<!DOCTYPE HTML>
+<html lang="en">
 <head>
-  <title>Sushi</title>
-  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+<meta charset=utf-8>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.currency.js"></script>
+<script type="text/javascript" src="js/jquery.currency.localization.en_US.js"></script>
+<link type="text/css" rel="stylesheet" href="css/currency.default.css">
+<title>Currency Converter - jQuery Plugin</title>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#currency-widget').currency();
+});
+</script>
+<style type="text/css">
+#currency-widget {
+    width:223px;
+}
+</style>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
 </head>
-<body class='container'>
-
-<%= yield %>
-
+<body class="container">
+<div id="currency-widget"></div>
 </body>
 </html>
