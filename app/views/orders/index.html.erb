@@ -1,18 +1,16 @@
-<h3>Welcome, Server</h3>
+<h3>Welcome, <%=@server%></h3>
 
 <ul>
 <%= form_for @order do |sushi| %>
 <li>
   <%= sushi.label :order_id %>
   <%= sushi.text_field :order_id %>
+  <%= sushi.label :name %>
+  <%= sushi.text_field :name %>
   <%= sushi.label :description %>
   <%= sushi.text_field :description %>
   <%= sushi.label :price %>
   <%= sushi.text_field :price %>
-  <%= sushi.label :tax %>
-  <%= sushi.text_field :tax %>
-  <%= sushi.label :total %>
-  <%= sushi.text_field :total %>
   <%= sushi.submit %>
 </li>
 <% end %>
@@ -20,10 +18,9 @@
 <ul>
   <% @orders.each do |order| %>
     <li>#<%= order.order_id %></li>
+    <li>$<%= order.name %></li>
     <li><%= order.description %></li>
     <li>$<%= order.price %></li>
-    <li>$<%= order.tax %></li>
-    <li>$<%= order.total %></li>
     <li><%= button_to "Remove", order_path(order), method: :delete%></li>
   <% end %>
 </ul>
@@ -32,7 +29,7 @@
   <% @orders.each do |fish| %>
     <% totalPrice += fish.price.to_i %>
     <% end %>
-    <li>Total Check:<%=(totalPrice) %></li>
+    <li>Total Check: <div id="total-price"><%=(totalPrice) %></div></li>
 
     <li>Tip:<%=(totalPrice * 0.15) %></li>
     <li>Tip:<%=(totalPrice * 0.2) %></li>
