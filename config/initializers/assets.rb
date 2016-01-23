@@ -8,13 +8,9 @@ Rails.application.config.assets.version = '1.0'
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-Rails.application.config.assets.precompile += %w( groups.css )
-Rails.application.config.assets.precompile += %w( meal_times.css )
+Rails.application.config.assets.precompile += %w( admins.css )
+Rails.application.config.assets.precompile += %w( welcome.css )
 Rails.application.config.assets.precompile += %w( orders.css )
-Rails.application.config.assets.precompile += %w( servers.css )
-Rails.application.config.assets.precompile += %w( sessions.css )
-Rails.application.config.assets.precompile += %w( groups.js )
-Rails.application.config.assets.precompile += %w( meal_times.js )
-Rails.application.config.assets.precompile += %w( orders.js )
-Rails.application.config.assets.precompile += %w( servers.js )
-Rails.application.config.assets.precompile += %w( sessions.js )
+Rails.application.config.assets.precompile += %w( items.css )
+Rails.application.config.assets.precompile += %w( parties.css )
+Rails.application.config.assets.precompile += %w( parties.js )
