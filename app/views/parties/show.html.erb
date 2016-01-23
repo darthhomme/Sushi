@@ -1,0 +1,33 @@
+<%= stylesheet_link_tag    'parties', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'parties', 'data-turbolinks-track' => true %>
+
+<h4>Bill For Party Number: <%= @party.id %></h4>
+<div class="row">
+  <div class="two columns bill">
+<% @party.orders.each do |order| %>
+<% if @party.euro == false %>
+    <%= order.quantity %>&nbsp;<%= order.item.name %>&nbsp;&#8212;&nbsp;&#36;<%= order.item.price * order.quantity %><br>
+<% elsif @party.euro == true %>
+  <%= order.quantity %>&nbsp;<%= order.item.name %>&nbsp;&#8212;&nbsp;&#8364;<%= '%.2f' % (order.item.price / 0.92) %><br>
+<% end %>
+<% end %>
+</div>
+</div>
+<br>
+<% if @party.euro == false %>
+<p>Subtotal:<%= '%.2f' % (@party.total) %></p>
+<p>Tax: <%= '%.2f' % (@party.total * 0.09) %></p>
+<p class="total">TOTAL: <%= '%.2f' % (@party.total + (@party.total * 0.09)) %></p>
+<p>Add 15% Tip: <%= '%.2f' % (@party.total + (@party.total * 0.15) + (@party.total * 0.09)) %></p>
+<p>Add 20% Tip: <%= '%.2f' % (@party.total + (@party.total * 0.20) + (@party.total * 0.09)) %></p>
+<p>Add 25% Tip: <%= '%.2f' % (@party.total + (@party.total * 0.25) + (@party.total * 0.09)) %></p>
+<p><%= button_to "Euro", party_euro_path, method: :put, class: "button tiny" %></p>
+<% elsif @party.euro == true %>
+<p>Subtotal:&nbsp;&#8364;<%= '%.2f' % (@party.total / 0.92) %></p>
+<p>Tax:&nbsp;&#8364;<%= '%.2f' % (((@party.total / 0.92) * 0.09)) %></p>
+<p class="total">TOTAL:&nbsp;&#8364;<%= '%.2f' % ((@party.total / 0.92) + ((@party.total / 0.92) * 0.09)) %></p>
+<p>Add 15% Tip:&nbsp;&#8364;<%= '%.2f' % ((@party.total / 0.92) + ((@party.total / 0.92) * 0.15) + ((@party.total / 0.92) * 0.09)) %></p>
+<p>Add 20% Tip:&nbsp;&#8364;<%= '%.2f' % ((@party.total / 0.92) + ((@party.total / 0.92) * 0.20) + ((@party.total / 0.92) * 0.09)) %></p>
+<p>Add 25% Tip:&nbsp;&#8364;<%= '%.2f' % ((@party.total / 0.92) + ((@party.total / 0.92)* 0.25) + ((@party.total / 0.92) * 0.09)) %></p>
+<p><%= button_to "American", party_american_path, method: :put, class: "button tiny" %></p>
+<% end %>
