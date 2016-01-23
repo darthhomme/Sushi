@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_filter :confirm_logged_in, :only => [:show]
+before_filter :confirm_logged_in, :only => [:show]
     def index
       @order = Order.new
       @orders = Order.order('created_at ASC').all
@@ -43,4 +43,5 @@ class OrdersController < ApplicationController
     def order_params
       params.require(:order).permit(:party_id, :item_id, :quantity)
     end
+
 end
