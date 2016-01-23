@@ -10,10 +10,29 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *
+ *
  *= require_self
- *= require orders
- *= require normalize
- *= require skeleton
- *= require welcome
- *= require admins
+ //= require foundation_and_overrides
  */
+
+#siteTitle {
+  font-size: 0.25em;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+.color {
+  background-color: lightgrey;
+  margin-top: 10px;
+  padding: 20px;
+  border: white solid 5px;
+  text-align: center;
+  line-height: 30px;
+  min-height: 300px;
+}
+
+h4 {
+  color: white;
+}
