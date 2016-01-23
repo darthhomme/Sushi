@@ -1,19 +1,57 @@
-
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset=utf-8>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.currency.js"></script>
-<script type="text/javascript" src="js/jquery.currency.localization.en_US.js"></script>
-<link type="text/css" rel="stylesheet" href="css/currency.default.css">
-<title>Currency Converter - jQuery Plugin</title>
-<script type="text/javascript"></script
-<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-<%= csrf_meta_tags %>
-</head>
-<body class="container">
-<%= yield %>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Serve.r" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">Serve.r</a></h1>
+        </li>
+         <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+
+      <section class="top-bar-section">
+        <!-- Left Nav Section -->
+        <ul class="left">
+          <li class="has-dropdown">
+            <a href="#">Orders</a>
+            <ul class="dropdown">
+              <li><a href="/orders">All Orders</a></li>
+              <li><a href="/orders/new">New Order</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="#">Parties</a>
+            <ul class="dropdown">
+              <li><a href="/parties">All Parties</a></li>
+              <li><a href="/parties">New Party</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="#">Employees</a>
+            <ul class="dropdown">
+              <li><a href="/log_in">Admin Login</a></li>
+              <li><a href="/log_in">Employee Login</a></li>
+            </ul>
+          </li>
+          <li><a href="/items">Menu</a></li>
+        </ul>
+      </section>
+    </nav>
+
+    <%= yield %>
+
+  </body>
 </html>
