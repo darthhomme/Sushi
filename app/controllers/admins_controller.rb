@@ -31,7 +31,7 @@ before_filter :confirm_logged_in, :only => [:show]
 
   private
     def admin_params
-      parameters = params.require(:admin).permit(:username, :password_digest, :password_confirmation)
+      parameters = params.require(:admin).permit(:username, :password, :password_confirmation)
     end
 
 end
