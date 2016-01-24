@@ -18,4 +18,7 @@
 
 console.log("ready");
 
-$(function(){ $(document).foundation(); });
+$(function(){
+  $(document).foundation();
+}
+);
