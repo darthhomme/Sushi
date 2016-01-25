@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   get '/login' => 'employees#log_in'
   get '/menu' => 'admins#menu'
   get '/cashout' => 'orders#cashout'
-  post 'login' => 'session#create'
-  get '/login' => 'session#new'
-  delete 'logout' => 'session#destroy'
+
+  post "/session" => 'session#create'
+  delete "/session" => 'session#destroy'
 
   put 'parties/:id/pay' => 'parties#pay', as: :pay
 
