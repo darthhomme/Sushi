@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
 before_filter :confirm_logged_in, :only => [:show]
     def index
       @order = Order.new
-      @orders = Order.order('created_at ASC').all
+      @orders = Order..all
     end
 
     def cashout
