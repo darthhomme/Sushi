@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
 before_filter :confirm_logged_in, :only => [:show]
     def index
       @order = Order.new
-      @orders = Order..all
+      @orders = Order.order('created_at ASC').all
     end
 
     def cashout
@@ -41,7 +41,7 @@ before_filter :confirm_logged_in, :only => [:show]
     private
 
     def order_params
-      params.require(:order).permit(:party_id, :item_id, :quantity)
+      params.require(:order).permit(:party, :item, :quantity)
     end
 
 end
