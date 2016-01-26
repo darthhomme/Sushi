@@ -19,6 +19,7 @@ class EmployeesController < ApplicationController
     end
 
     def log_in
+      redirect_to '/orders'
     end
 
     def menu
