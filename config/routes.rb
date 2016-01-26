@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :admins
   resources :employees
 
-  get '/log_in' => 'orders#new'
+  get '/log_in' => 'parties#new'
   get '/menu' => 'admins#menu'
   get '/cashout' => 'orders#cashout'
 
