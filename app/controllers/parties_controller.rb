@@ -6,7 +6,7 @@ class PartiesController < ApplicationController
 
   def create
     party = Party.create(party_params)
-    redirect_to '/parties'
+    redirect_to '/orders'
   end
 
   def new
